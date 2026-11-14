@@ -9,15 +9,32 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ResolveTenant
 {
-    public function handle(Request $request, Closure $next): Response
-    {
+    public function handle(
+        Request $request,
+        Closure $next
+    ): Response {
         $user = $request->user();
-        
-        // Jika ada user login dan dia bukan super_admin, set context ke tenant-nya
-        if ($user && !$user->hasRole('super_admin')) {
-            app(TenantContext::class)->set($user->tenant_id);
+
+        if (! $user) {
+            abort(401, 'Autentikasi diperlukan.');
         }
 
-        return $next($request);
+        $context = app(TenantContext::class);
+
+        try {
+            if ($user->hasRole('super_admin')) {
+                $context->setSuperAdmin();
+            } else {
+                if (! $user->tenant_id) {
+                    abort(403, 'Akun belum terhubung dengan organisasi.');
+                }
+
+                $context->setTenant((int) $user->tenant_id);
+            }
+
+            return $next($request);
+        } finally {
+            $context->reset();
+        }
     }
 }

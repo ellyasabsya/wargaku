@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, FileText, LogOut, Bell, Search, Sun, Moon, ShieldCheck, Wallet, Settings, ChevronDown, User } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, LogOut, Bell, Search, Sun, Moon, ShieldCheck, Wallet, ChevronDown, User } from 'lucide-react';
 
 export default function Layout() {
   const navigate = useNavigate();

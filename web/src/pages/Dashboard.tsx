@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { api } from '../lib/api';
-import { Users, Home, FileText, TrendingUp, MoreVertical, ArrowUpRight } from 'lucide-react';
+import { Users, Home, FileText, MoreVertical, ArrowUpRight } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function Dashboard() {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { api } from '../lib/api';
-import { Plus, Search, X, UserPlus, MoreVertical, ShieldCheck, Camera, UploadCloud, ScanLine, CheckCircle2 } from 'lucide-react';
+import { Plus, X, UserPlus, ShieldCheck, UploadCloud, ScanLine, CheckCircle2 } from 'lucide-react';
 
 export default function DataWarga() {
   const [households, setHouseholds] = useState<any[]>([]);

@@ -25,3 +25,6 @@
 .DS_Store
 .idea/
 .vscode/
+
+# Backup lokal yang tidak perlu di-upload
+**/*.backup
