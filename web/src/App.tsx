@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Layout from './components/Layout';
 import Login from './pages/Login';
+import Daftar from './pages/Daftar';
 import Dashboard from './pages/Dashboard';
 import DataWarga from './pages/DataWarga';
 import SuratMenyurat from './pages/SuratMenyurat';
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/daftar" element={<Daftar />} />
 
         <Route
           element={
