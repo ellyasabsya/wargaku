@@ -54,8 +54,27 @@
   }
 }
 .lp-chip { animation: lp-chip 0.35s ease-out backwards; }
+
+/* Garis pemindai di gambar foto KK (berjalan tiga kali, lalu berhenti) */
+@keyframes lp-scan {
+  0% { top: 0; opacity: 0; }
+  10%, 90% { opacity: 1; }
+  100% { top: calc(100% - 3px); opacity: 0; }
+}
+.lp-scan {
+  top: 0;
+  opacity: 0;
+  animation: lp-scan 2.4s linear 0.8s 3;
+}
+
+/* Titik halus untuk latar gelap */
+.lp-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .lp-chip { animation: none; }
+  .lp-chip, .lp-scan { animation: none; }
   html { scroll-behavior: auto; }
 }
 
