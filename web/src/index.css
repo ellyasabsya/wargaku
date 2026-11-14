@@ -1,7 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* ===== Landing page: token warna dan font ===== */
+.landing-page {
+  --lp-bg: #f4f7f6;
+  --lp-surface: #ffffff;
+  --lp-ink: #0f1f1d;
+  --lp-muted: #4a5d5a;
+  --lp-line: #d5e0dd;
+  --lp-soft: #e1f1ee;
+  --lp-btn: #0f766e;
+  --lp-btn-hover: #0b5f58;
+  --lp-accent: #0f766e;
+  --lp-deep: #083f3b;
+  --lp-stamp: #c8342b;
+}
+.dark .landing-page {
+  --lp-bg: #0a1514;
+  --lp-surface: #112220;
+  --lp-ink: #eaf3f1;
+  --lp-muted: #9db5b1;
+  --lp-line: #223836;
+  --lp-soft: #0f2927;
+  --lp-accent: #5eead4;
+}
+
+@theme inline {
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --color-lp-bg: var(--lp-bg);
+  --color-lp-surface: var(--lp-surface);
+  --color-lp-ink: var(--lp-ink);
+  --color-lp-muted: var(--lp-muted);
+  --color-lp-line: var(--lp-line);
+  --color-lp-soft: var(--lp-soft);
+  --color-lp-btn: var(--lp-btn);
+  --color-lp-btn-hover: var(--lp-btn-hover);
+  --color-lp-accent: var(--lp-accent);
+  --color-lp-deep: var(--lp-deep);
+  --color-lp-stamp: var(--lp-stamp);
+}
+
+/* Garis seperti buku kas, memudar ke bawah */
+.lp-ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 35px,
+    color-mix(in srgb, var(--lp-line) 70%, transparent) 35px,
+    color-mix(in srgb, var(--lp-line) 70%, transparent) 36px
+  );
+  mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+}
+
+/* Satu momen animasi: status menyala berurutan, lalu cap jatuh */
+@keyframes lp-chip {
+  from {
+    background-color: var(--lp-surface);
+    color: var(--lp-muted);
+    border-color: var(--lp-line);
+  }
+}
+@keyframes lp-stamp {
+  0% { opacity: 0; transform: scale(2.2) rotate(-18deg); }
+  60% { opacity: 1; transform: scale(0.94) rotate(-12deg); }
+}
+.lp-chip { animation: lp-chip 0.35s ease-out backwards; }
+.lp-stamp {
+  opacity: 0.92;
+  transform: rotate(-12deg);
+  animation: lp-stamp 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-chip, .lp-stamp { animation: none; }
+  html { scroll-behavior: auto; }
+}
 
 body {
   font-family: 'Inter', sans-serif;
