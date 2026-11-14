@@ -9,14 +9,15 @@
   --lp-bg: #f4f7f6;
   --lp-surface: #ffffff;
   --lp-ink: #0f1f1d;
-  --lp-muted: #4a5d5a;
+  --lp-muted: #3d4f4c;
   --lp-line: #d5e0dd;
   --lp-soft: #e1f1ee;
   --lp-btn: #0f766e;
   --lp-btn-hover: #0b5f58;
   --lp-accent: #0f766e;
   --lp-deep: #083f3b;
-  --lp-stamp: #c8342b;
+  --lp-wa: #168a43;
+  --lp-wa-hover: #117a3a;
 }
 .dark .landing-page {
   --lp-bg: #0a1514;
@@ -40,41 +41,21 @@
   --color-lp-btn-hover: var(--lp-btn-hover);
   --color-lp-accent: var(--lp-accent);
   --color-lp-deep: var(--lp-deep);
-  --color-lp-stamp: var(--lp-stamp);
+  --color-lp-wa: var(--lp-wa);
+  --color-lp-wa-hover: var(--lp-wa-hover);
 }
 
-/* Garis seperti buku kas, memudar ke bawah */
-.lp-ruled {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 35px,
-    color-mix(in srgb, var(--lp-line) 70%, transparent) 35px,
-    color-mix(in srgb, var(--lp-line) 70%, transparent) 36px
-  );
-  mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
-}
-
-/* Satu momen animasi: status menyala berurutan, lalu cap jatuh */
+/* Satu momen animasi: status di layar HP menyala berurutan */
 @keyframes lp-chip {
   from {
-    background-color: var(--lp-surface);
-    color: var(--lp-muted);
-    border-color: var(--lp-line);
+    background-color: #f1f5f9;
+    color: #64748b;
+    border-color: #cbd5e1;
   }
 }
-@keyframes lp-stamp {
-  0% { opacity: 0; transform: scale(2.2) rotate(-18deg); }
-  60% { opacity: 1; transform: scale(0.94) rotate(-12deg); }
-}
 .lp-chip { animation: lp-chip 0.35s ease-out backwards; }
-.lp-stamp {
-  opacity: 0.92;
-  transform: rotate(-12deg);
-  animation: lp-stamp 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
-}
 @media (prefers-reduced-motion: reduce) {
-  .lp-chip, .lp-stamp { animation: none; }
+  .lp-chip { animation: none; }
   html { scroll-behavior: auto; }
 }
 
