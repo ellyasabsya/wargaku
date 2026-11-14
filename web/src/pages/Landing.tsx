@@ -60,7 +60,7 @@ export default function Landing() {
   const nav = [['Fitur', '#fitur'], ['Cara mulai', '#cara-mulai'], ['Harga', '#harga'], ['FAQ', '#faq']];
 
   return (
-    <div className="min-h-screen bg-white text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <div className="landing-page min-h-screen bg-white text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
@@ -103,7 +103,7 @@ export default function Landing() {
               <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm text-teal-100">
                 <Sparkles size={15} className="text-amber-300" /> Dibuat khusus untuk pengurus RT
               </p>
-              <h1 className="mt-6 text-[2.6rem] font-extrabold leading-[1.05] tracking-tight sm:text-6xl" style={display}>
+              <h1 className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Urusan warga selesai,<br />tanpa buku catatan.
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-8 text-teal-50/80">
