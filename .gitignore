@@ -1,30 +1,6 @@
-# Environment dan rahasia
+node_modules/
 .env
 .env.*
-!.env.example
-!.env.*.example
-
-# Dependencies
-**/node_modules/
-**/vendor/
-
-# Build dan cache
-**/dist/
-**/build/
-**/.vite/
-**/bootstrap/cache/*.php
-**/storage/*.key
-
-# Logs dan temporary files
-*.log
-*.tmp
-*.bak
-*.orig
-
-# Editor dan sistem operasi
 .DS_Store
-.idea/
-.vscode/
-
-# Backup lokal yang tidak perlu di-upload
-**/*.backup
+dist/
+build/
